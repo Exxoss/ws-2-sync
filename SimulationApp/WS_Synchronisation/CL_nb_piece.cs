@@ -5,6 +5,7 @@ namespace WS_Synchronisation
     {
         private static int nb_piece = 0;
         private static object lck;
+
         static CL_nb_piece()
         {
             lck = new object();

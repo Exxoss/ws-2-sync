@@ -3,22 +3,22 @@ namespace WS_Synchronisation
 {
     public class CL_outils
     {
-        private string nom;
-        private string type;
+        private string id;
+        private ToolTypeEnum type;
         private string utilisateur;
 
-        public CL_outils(string Nom, string Type)
+        public CL_outils(string Id, ToolTypeEnum Type)
         {
-            this.Nom = Nom;
+            this.Id = Id;
             this.Type = Type;
             this.Utilisateur = "NC";
         }
-        public string Nom
+        public string Id
         {
-            get { return nom; }
-            set { nom = value; }
+            get { return id; }
+            set { id = value; }
         }
-        public string Type
+        public ToolTypeEnum Type
         {
             get { return type; }
             set { type = value; }
@@ -29,19 +29,16 @@ namespace WS_Synchronisation
             set
             {
                 utilisateur = value;
-                Console.WriteLine("L'outil " + this.nom + " est utilisé par " + this.utilisateur);
+                Console.WriteLine("L'outil " + this.id + " est utilisé par " + this.utilisateur);
             }
         }
-        /// <summary>
-        /// Simulation d'un travail avec l'outil
-        /// </summary>
         public void utilisation_outil()
         {
             System.Threading.Thread.Sleep(2000);
         }
         public void liberation_outil()
         {
-            string msg = "L'outil " + this.nom + " est libéré par " + this.utilisateur;
+            string msg = "L'outil " + this.id + " est libéré par " + this.utilisateur;
             Console.WriteLine(msg);
         }
     }
